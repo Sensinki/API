@@ -26,6 +26,7 @@ dotenv.config();
 app.get("/", (req, res) => {
     console.log(req.query);
     res.render("index", { title: "Homety" });
+    res.send("HoOo")
 });
 
 
@@ -47,9 +48,9 @@ app.listen(PORT, () => {
 });
 
 // LAATSTE ROUTE ERROR(404) PAGINA
-app.get("/*", (req, res) => {
-    res.status(404).render("404", { title: "404" });
-});
+// app.get("/*", (req, res) => {
+//     res.status(404).render("404", { title: "404" });
+// });
 
 app.use(function (req, res) {
     res.locals.title = "Error 404";
