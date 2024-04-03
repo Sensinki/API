@@ -11,7 +11,7 @@
   },
   "rules": {
     "semi": ["warn", "always"],
-    "quotes": ["warn", "single"],
+    "quotes": ["warn", "double"],
     "space-before-function-paren": ["warn", "always"],
     "no-console": "off",
     "object-curly-spacing": ["warn", "always"],
