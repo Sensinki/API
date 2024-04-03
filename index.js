@@ -1,17 +1,3 @@
-// const express = require("express");
-
-// const app = express();
-// const port = 4000;
-
-// // const ejs = require("ejs");
-// // const partials = path.join(__dirname, '..views/partials');
-
-// app.set("view engine", "ejs");
-
-// app.set("views", "views");
-
-// require("dotenv").config();
-
 // IMPORTING
 const express = require("express");
 const app = express();
@@ -37,7 +23,7 @@ dotenv.config();
 //
 
 // ROUTING
-app.get("/", (req, res) => {
+app.get("/home", (req, res) => {
     console.log(req.query);
     res.render("index", { title: "Homety" });
 });
