@@ -23,6 +23,12 @@ dotenv.config();
 //
 
 // ROUTING
+app.get("/", (req, res) => {
+    console.log(req.query);
+    res.render("index", { title: "Homety" });
+});
+
+
 app.get("/home", (req, res) => {
     console.log(req.query);
     res.render("index", { title: "Homety" });
