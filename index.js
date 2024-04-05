@@ -26,7 +26,7 @@ dotenv.config();
 app.get("/", (req, res) => {
     console.log(req.query);
     res.render("index", { title: "Homety" });
-    res.send("HoOo")
+    // res.send("HoOo")
 });
 
 
