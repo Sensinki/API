@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head.ejs') %>
+</head>
+
+<body>
+
+    <%- include('../partials/header.ejs') %>
+
+        <h1>
+            <%= title %>
+        </h1>
+
+
+        <%- include('../components/discoverMovies.ejs') %>
+
+
+            <%- include('../components/trendingMovies.ejs') %>
+
+
+                <p>are you sure that you are working (message from: index.ejs)</p>
+
+                <script src="/script.js"></script>
+
+</body>
+
+</html>

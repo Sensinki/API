@@ -28,12 +28,29 @@
 
     --color1: #fff;
     --color2: #181818;
+
+    --purple: #22092c;
+    --whiskey: #872341;
+    --warm-pink: #be3144;
+    --warm-orange: #f05941;
 }
 
 @media screen and (width > 1rem) {
     /* GENERAL STYLING */
     body {
         background-color: yellow;
+    }
+
+    /* hidden h1 */
+    h1 {
+        /* https://www.a11yproject.com/posts/how-to-hide-content/ */
+        clip: rect(0 0 0 0);
+        clip-path: inset(50%);
+        height: 1px;
+        overflow: hidden;
+        position: absolute;
+        white-space: nowrap;
+        width: 1px;
     }
 
     a {
@@ -56,7 +73,7 @@
     }
 
     .logo {
-        color: antiquewhite;
+        color: #f5f7ff;
         font-family: "Rubik Moonrocks", sans-serif;
         font-size: larger;
     }
