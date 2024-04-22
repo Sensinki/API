@@ -1,18 +1,18 @@
 <header>
     <nav>
         <section>
-            <a href='#' class="logo">MovyMovie</a>
+            <a href='/' class="logo">MovyMovie</a>
             <input type='checkbox' id='check' />
             <ul class="menu">
 
-                <li><a href="">Home</a></li>
-                <li><a href="">Movies</a></li>
-                <li><a href="">TV-series</a></li>
-                <li><a href="">Genres</a></li>
+                <li><a href="/">Home</a></li>
+                <!-- <li><a href="">Movies</a></li> -->
+                <!-- <li><a href="">TV-series</a></li> -->
+                <!-- <li><a href="">Genres</a></li> -->
                 <li class="search">
-                    <form id="searchBox">
+                    <form action="/search" method="get" id="searchBox">
                         <i class="fa fa-search" id="searchIcon" aria-hidden="true"></i>
-                        <input type="search" placeholder="Search" aria-label="Search">
+                        <input type="search" name="q" placeholder="Search" aria-label="Search">
                         <i class="fa fa-microphone"></i>
                     </form>
                 </li>

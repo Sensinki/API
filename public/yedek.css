@@ -16,14 +16,6 @@
     summary {
         cursor: pointer;
     }
-
-    a,
-    p,
-    h3,
-    h4,
-    input {
-        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
-    }
 }
 
 /* CUSTOM PROPERTIES */
@@ -105,7 +97,7 @@
     .logo {
         color: var(--warm-orange);
         font-family: "Rubik Moonrocks", sans-serif;
-        font-size: 24px;
+        font-size: larger;
     }
 
     ul {
@@ -238,8 +230,7 @@
         scrollbar-width: none;
         height: 23rem;
 
-        padding-left: 2rem;
-        padding-right: 2rem;
+        padding-left: 2em;
     }
 
     li:has(img) {
@@ -277,7 +268,7 @@
         & img {
             border-radius: 0.5rem;
 
-            width: 10em;
+            width: 1em;
             height: 15em;
         }
     }
@@ -350,6 +341,7 @@
         color: red;
     }
 
+
     /* SEARCH */
 
     #searchResults ul:has(img) {
@@ -359,8 +351,11 @@
         flex-direction: row;
         flex-wrap: wrap;
         height: 100%;
-        padding: 1em;
+        padding-left: 0;
+        padding-top: 1em;
     }
+
+
 }
 @media screen and (width > 31rem) {
     main {

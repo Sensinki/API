@@ -1,7 +1,7 @@
-<h2>Discover Movies</h2>
+<h3>Similar Movies</h3>
 
 <ul>
-    <% movies.forEach(movie=> { %>
+    <% similarMovies.forEach(movie=> { %>
         <li>
             <div class="image-container">
                 <% if (movie.poster_path) { %>
@@ -11,7 +11,7 @@
                             alt="There is no poster for this movie">
                         <% } %>
             </div>
-            
+
             <% if (movie.title) { %>
                 <a href="/movie/<%= movie.id %>">
                     <%= movie.title %>

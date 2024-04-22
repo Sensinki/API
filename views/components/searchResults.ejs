@@ -1,5 +1,3 @@
-<h2>Discover Movies</h2>
-
 <ul>
     <% movies.forEach(movie=> { %>
         <li>
@@ -11,7 +9,7 @@
                             alt="There is no poster for this movie">
                         <% } %>
             </div>
-            
+
             <% if (movie.title) { %>
                 <a href="/movie/<%= movie.id %>">
                     <%= movie.title %>
@@ -19,7 +17,7 @@
                 <% } else { %>
                     <a href="/404">Movie not found</a>
                     <% } %>
-
+                    
                         <% if (movie.vote_average>= 8) { %>
                             <p class="vote_average green">
                                 <%=movie.vote_average %>

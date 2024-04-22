@@ -9,20 +9,31 @@
 
     <%- include('../partials/header.ejs') %>
 
-        <h1>
-            <%= title %>
-        </h1>
+
+        <main>
+            <h1>
+                <%= title %>
+            </h1>
+
+            <section id="airingToday">
+                <%- include('../components/airingToday.ejs') %>
+
+            </section>
+            <section id="discoverMovies">
+                <%- include('../components/discoverMovies.ejs') %>
+
+            </section>
+            <section id="trendingMovies">
+                <%- include('../components/trendingMovies.ejs') %>
+            </section>
 
 
-        <%- include('../components/discoverMovies.ejs') %>
+        </main>
 
+            <%- include('../partials/footer.ejs') %>
 
-            <%- include('../components/trendingMovies.ejs') %>
-
-
-                <p>are you sure that you are working (message from: index.ejs)</p>
-
-                <script src="/script.js"></script>
+        
+        <script src="/script.js"></script>
 
 </body>
 

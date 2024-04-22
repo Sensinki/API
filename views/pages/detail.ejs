@@ -2,38 +2,66 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
-    <link rel="stylesheet" href="/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+    <%- include('../partials/head.ejs') %>
 </head>
 
 <body>
 
     <%- include('../partials/header.ejs') %>
 
-        <h1>
-            <%= title %>
-        </h1>
+        <main>
+            <h1>
+                <%= title %>
+            </h1>
 
-        <section>
-            <h2>
-                <%= movie.title %>
-            </h2>
+            <section>
+                <div id="backdropMovie">
+                    <img src="https://image.tmdb.org/t/p/w400<%= movie.backdrop_path %>" alt="<%= movie.title %>">
 
-            <img src="https://image.tmdb.org/t/p/w400<%= movie.poster_path %>" alt="<%= movie.title %>">
+                    <div id="headerMovie">
+                        <h2>
+                            <%= movie.title %>
+                        </h2>
+                        <p>
+                            <%= movie.release_date %>
+                        </p>
+                        <img src="https://image.tmdb.org/t/p/w400<%= movie.poster_path %>"
+                            alt="<%= movie.title %> poster">
+                    </div>
 
-            
+                    <% if (movie.vote_average>= 8) { %>
+                        <p class="vote_average green">
+                            <%=movie.vote_average %>
+                        </p>
+                        <% } else if (movie.vote_average>= 5) { %>
+                            <p class="vote_average yellow">
+                                <%=movie.vote_average %>
+                            </p>
+                            <% } else { %>
+                                <p class="vote_average red">
+                                    <%=movie.vote_average %>
+                                </p>
+                                <% } %>
 
-        </section>
+                </div>
 
-        <script src="/script.js"></script>
+                <!-- maybe genres or trailer can be here -->
 
+                <h3>Overview</h3>
+                <p>
+                    <%= movie.overview %>
+                </p>
+
+                <section id="similarMovies">
+                    <%- include('../components/similarMovies.ejs') %>
+                </section>
+            </section>
+
+            <script src="/script.js"></script>
+        </main>
+        <footer>
+
+        </footer>
 </body>
 
 </html>

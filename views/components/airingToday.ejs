@@ -1,0 +1,30 @@
+<h2>NOW Playing</h2>
+<ul>
+    <% airingToday.forEach(movie=> { %>
+        <li>
+            <div class="image-container">
+                <% if (movie.poster_path) { %>
+                    <img src="https://image.tmdb.org/t/p/w500<%= movie.poster_path %>" alt="<%= movie.title %>">
+                    <% } else { %>
+                        <img src="/assets/images/image.png" class="height-change"
+                            alt="There is no poster for this movie">
+                        <% } %>
+            </div> <a href="/movie/<%= movie.id %>">
+                <%= movie.title %>
+            </a>
+            <% if (movie.vote_average>= 8) { %>
+                <p class="vote_average green">
+                    <%=movie.vote_average %>
+                </p>
+                <% } else if (movie.vote_average>= 5) { %>
+                    <p class="vote_average yellow">
+                        <%=movie.vote_average %>
+                    </p>
+                    <% } else { %>
+                        <p class="vote_average red">
+                            <%=movie.vote_average %>
+                        </p>
+                        <% } %>
+        </li>
+        <% }); %>
+</ul>
