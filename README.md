@@ -1,83 +1,84 @@
-# API @cmda-minor-web 2023 - 2024
 
-Het web is een geweldige plek en de beschikbare technologieën ervan zijn vandaag de dag krachtiger dan ooit tevoren.
-De kracht van het web ligt in het feit dat het een platform is dat voor iedereen beschikbaar is en dat het gebaseerd is
-op open standaarden. De technologieën worden ontworpen en gespecificeerd op basis van consensus en zijn niet in handen
-van één enkele entiteit.
+# Process Report 📰
 
-Desondanks zijn er veel mensen en bedrijven die vinden dat het internet niet voldoet aan hun behoeften. Dit blijkt uit
-de pogingen van grote techbedrijven om hun eigen afgesloten ecosystemen te creëren. Ze streven hiermee naar controle over
-zowel de gebruikerservaring als de gegenereerde data.
+## My idea 🍀
+My idea is to create a Netflix-like application. For this I will work with TheMovieDB's API. I want to learn more about fetching data and working more with data. I want to make it possible for the user to see what movies are popular, view the details of any movie and search for specific movies. I also want to make it possible to search for movies with voice recognition, using the Google Web Speech API for the search feature. 
 
-**In dit vier weken durende vak zullen we de kracht van het web ervaren en kijken hoe we (mobiele) web apps kunnen maken die
-net zo aantrekkelijk zijn als native mobiele apps. We beginnen met het maken van een server-side gerenderde applicatie
-waarbij we geleidelijk de gebruikerservaring verbeteren met relevante beschikbare web API's.**
+## What did I use to create this project 🚸
+- NodeJS
+- Express
+- Npm
+- EJS (templating engine)
+- Render (deployment)
+- Dotenv
+- Git
 
-## Doelen
-
-Na deze cursus zul je:
-
-- In staat zijn om een server-side gerenderde applicatie te maken.
-- In staat zijn om een enerverende gebruikerservaring te creëren.
-- Een breder begrip hebben van het web en zijn mogelijkheden.
-
-## Opdracht
-
-In dit vak zullen we een van de meest voorkomende app-concepten van vandaag gebruiken en ontdekken dat we deze kunnen
-maken met moderne webtechnologie.
-
-Voorbeelden:
-
-- Maak je eigen streamingplatform (Netflix/Spotify).
-- Maak je eigen doom-scroll-app (Instagram/TikTok).
-- Maak je eigen chatapplicatie (WhatsApp/Signal).
-- Een andere app die je zelf leuk vindt...
-
-Voorbeeld content API's die je kan gebruiken:
-
+### API's that I used 🎮
 - [MovieDB API](https://developer.themoviedb.org/reference/intro/getting-started)
-- [Rijksmuseum API](https://data.rijksmuseum.nl/object-metadata/api/)
-- [Spotify API](https://developer.spotify.com/documentation/web-api)
-
-Voorbeelden van Web API's die je kan gebruiken:
-
-- [Page Transition API voor animaties tusse npagina's](https://developer.mozilla.org/en-US/docs/Web/API/Page_Transitions_API)
-- [Web Animations API voor complexe animaties](https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API)
-- [Service Worker API voor installable web apps](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API)
-- [Web Push API voor push notifications](https://developer.mozilla.org/en-US/docs/Web/API/Push_API)
-- [Server sent events voor realtime functionaliteit](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events)
-- [Geolocation API](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API)
 - [Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API)
-- [Web Share API voor sharen van content binnen de context van de gebruiker](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/share)
-- ...
 
-De lijst is eindeloos, laat je vooral inspireren op de overzichtspagina van [MDN](https://developer.mozilla.org/en-US/docs/Web/API).
 
-## Beoordeling
+## How to install 📦
 
-Je zal beoordeeld worden op basis van je code, creativiteit en je gedocumenteerde proces. Om het vak te halen zal je aan
-de 3 criteria hieronder moeten voldoen. Een hoger cijfer kan je halen door verder te gaan dan de basis.
+### 1. Create a folder
+That helps you to place this project in your computer so you can easily navigate through it. 
 
-| Tekortkomingen | Criterium                                                                                                                                                                                                                                 | Verbeteringen |
-|:---------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:--------------|
-|                | *Project* - Je app werkt en is online beschikbaar. Daarnaast heb je je concept, technologieen, gebruikte Web API's en proces duidelijk gedocumenteerd in je `README.md`.                                                                  |               |
-|                | *Functionaliteit* - Je hebt minstens een overzicht en een detailpagina. Hoe meer dynamischer je functionaliteit.hoe beter.                                                                                                                |               |
-|                | *Enhancements* - Je laat zien dat je begrijpt hoe het web werkt door meerdere Web API's te gebruiken om een zo aantrekkelijk mogelijke gebruikerservaring neer te zetten. Je gebruikt je eigen creativiteit om iets uniks neer te zetten. |               |
+### 2. Clone this repository 
+You can clone the application from CLI or install it by downloading the ZIP file. To clone, you can paste the following code into the CLI you are using:
 
-## Planning
+* HTTPS
+`git clone https://github.com/Sensinki/API.git`
+
+* or SSH
+`git clone git@github.com:Sensinki/API.git`
+
+### 3. Install dependencies
+Now you have all documents but you can not run the code without dependencies. I used npm, you can install npm by copying the following code to the CLI.
+
+You can check my "package.json" file if you want to see all of my dependensies and devDependensies.
+
+`npm install`
+
+### 4. .env file 
+As last final step, you should set your .env file for MongoDB connection. In the .env file you will define following informations:
+
+`TMDB_API_KEY=04625eb1806d881fb98867452db70e10`
+`PORT=2222`
+
+### 5. Run the project
+Now you can run the project. Write your terminal `npm run dev`. 
+
+To check the connection you can go to your browser and write "localhost:2222" or "localhost:3333". If there is no problem, you should see the homepage of the MovyMovie app.
+You can also check the connection by looking at the console. If it is working you should see something like:
+
+`Loaded API Key: YOUR TMBD API KEY
+MovyMovie app listening on port 2222`
+
+## Process 📫
+![]()
+<img width="500" alt="" src="">
+
+### Planning ✈️
 
 | Planning                   | Maandag             | Dinsdag               | Vrijdag                |
 |----------------------------|---------------------|-----------------------|------------------------|
-| Week 1 - Kickoff & concept | Pasen               | Introductie en uitleg | Feedback gesprekken    |
-| Week 2 - The baseline      | College + workshops | Workshops             | Feedback gesprekken    |
-| Week 3 - Enhance           | College + workshops | Workshops             | Feedback gesprekken    |
-| Week 4 - Enhance & wrap up | Individuele vragen  | Individuele vragen    | Beoordelingsgesprekken |
+| Week 1 - Kickoff & concept | Pasen | Introduction | Feedback |
+| Week 2 - The baseline | College + workshops | Workshops | Feedback |
+| Week 3 - Enhance | College + workshops | Workshops | Feedback |
+| Week 4 - Enhance & wrap up | Individual question | Individual question | Assessment interviews |
 
-## Resources
+### Week 1
 
-- Om serverside te kunnen renderen maak ik gebruik van [TinyHttp](https://github.com/tinyhttp), maar je kan ook kiezen voor [Express](https://expressjs.com/).
-- Voor templating maak ik gebruik van [LiquidJS](https://liquidjs.com/), maar je kan ook kiezen voor [EJS](https://ejs.co/).
-- Voor build tooling(CSS en JS) maak ik gebruik van [Vite](https://vitejs.dev/).
 
-Voel je vrij om je eigen technolgieën te kiezen, zolang je maar kan uitleggen waarom je deze hebt gekozen en zolang
-je geen gebruik maakt van een framework zoals React, Vue, Svelte, Angular, etc. 
+### Week 2
+
+
+### Week 3
+
+
+### Week 4 
+
+
+
+
+
