@@ -39,10 +39,16 @@ app.get("/movie/:id/", async (req, res) => {
     const movieId = req.params.id;
 
     const movie = await fetch(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}`).then((res) => res.json());
+    
     const similarData = await fetch(`https://api.themoviedb.org/3/movie/${movieId}/similar?api_key=${apiKey}`).then((res) => res.json());
+    
+    const trailerData = await fetch(`https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=${apiKey}`).then((res) => res.json());
+    const trailers = trailerData.results;
+    const trailerKeys = trailers.filter((object) => object.type === "Teaser").map((object) => object.key);
+    
+    const reviewsData = await fetch(`https://api.themoviedb.org/3/movie/${movieId}/reviews?api_key=${apiKey}`).then((res) => res.json());
 
-
-    res.render("pages/detail", { title: "Detail", movie: movie, similarMovies: similarData.results });
+    res.render("pages/detail", { title: "Movie Detail", movie: movie, similarMovies: similarData.results, trailerKeys: trailerKeys, reviewsMovie: reviewsData.results });
 });
 
 // Define a route to handle API requests
@@ -84,5 +90,5 @@ app.use(function (req, res) {
 
 // PORT
 app.listen(PORT, () => {
-    console.log(`Example app listening on port ${PORT}`);
+    console.log(`MovyMovie app listening on port ${PORT}`);
 });

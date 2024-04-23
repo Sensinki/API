@@ -1,5 +1,6 @@
 /* FONT FAMILY */
 @import url("https://fonts.googleapis.com/css2?family=Rubik+Moonrocks");
+@import url("https://fonts.googleapis.com/css2?family=Leckerli+One");
 
 /* LAYER */
 @layer base {
@@ -88,11 +89,15 @@
         position: fixed;
         top: 0cm;
         width: 100vw;
-        z-index: 10;
+        z-index: 100;
     }
 
     main {
         margin-top: 6em;
+    }
+
+    #movieDetail {
+        margin-top: 5em;
     }
 
     header nav {
@@ -105,7 +110,7 @@
     .logo {
         color: var(--warm-orange);
         font-family: "Rubik Moonrocks", sans-serif;
-        font-size: 24px;
+        font-size: 1.5em;
     }
 
     ul {
@@ -123,6 +128,7 @@
         list-style-type: none;
         padding-left: 0;
         list-style: none;
+        cursor: pointer;
     }
 
     header nav > section {
@@ -317,12 +323,15 @@
         justify-self: end;
         align-self: center;
 
-        height: 4em;
+        /* height: 4em; */
     }
 
     .vote_average {
         display: grid;
         place-items: center;
+        justify-content: center;
+        align-self: center;
+        align-items: center;
 
         width: 2.5em;
         height: 2.5em;
@@ -335,6 +344,154 @@
 
         background-color: var(--purple);
         border: 1px 1px solid var(--change-black);
+    }
+
+    /* SEARCH */
+
+    #searchResults ul:has(img) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        height: 100%;
+        padding: 1em;
+    }
+
+    /* Detail page  */
+    #backdropMovie {
+        position: relative;
+        width: 100%;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+
+    .tagline {
+        position: absolute;
+        top: 0;
+        padding-top: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100vw;
+
+        font-family: "Leckerli One", cursive;
+
+        font-size: 1.5rem;
+        font-weight: 900;
+        text-shadow:
+            0px 0px 5px rgba(255, 255, 255, 0.5),
+            0px 0px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    #backdropMovie > img {
+        display: block;
+        height: 60vh;
+        width: 100vw;
+        object-fit: cover;
+        object-position: center;
+        filter: blur(5px);
+    }
+
+    #headerMovie {
+        display: grid;
+        grid-template-columns: max-content 1fr;
+        grid-template-rows: 1fr;
+        grid-column-gap: 2rem;
+
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 1.5rem;
+    }
+
+    #headerMovie img {
+        grid-area: 1 / 1 / 3 / 2;
+        width: 10rem;
+        height: 15rem;
+        border-radius: 0.5rem;
+
+        box-shadow:
+            0px 0px 10px -2px rgba(82, 3, 3, 0.209),
+            0px 0px 10px -2px rgba(6, 5, 5, 0.621);
+    }
+
+    #headerMovie h2 {
+        padding: 0;
+        margin: 2rem 0;
+    }
+
+    #headerMovie img {
+        width: 120px;
+        height: auto;
+        float: left;
+    }
+
+    #movieTitleGroup,
+    #overviewMovie,
+    #trailersMovie,
+    #reviewsMovie {
+        color: var(--change-white);
+        overflow: hidden;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    #movieTitleGroup {
+        padding-left: 1rem;
+    }
+
+    #movieTitleGroup h2 {
+        margin: 0;
+        font-size: 1.5rem;
+    }
+
+    #movieTitleGroup p {
+        margin: 0;
+        font-size: 16px;
+        opacity: 0.6;
+    }
+
+    #movieTitleGroup a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: linear-gradient(92.88deg, #455eb5 9.16%, #5643cc 43.89%, #673fd7 64.72%);
+        border-radius: 2rem;
+        border-style: none;
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+        color: var(--change-white);
+        font-size: 1rem;
+        font-weight: 600;
+
+        text-align: center;
+
+        text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
+
+        height: 4rem;
+        padding: 0 1.5rem;
+
+        transition: all 0.5s;
+    }
+
+    #movieTitleGroup a:hover {
+        box-shadow: rgba(80, 63, 205, 0.5) 0 0.1rem 1.5rem;
+        transition-duration: 0.1s;
+    }
+
+    #detailMovies .vote_average {
+        position: absolute;
+        bottom: 2rem;
+        right: 2rem;
+        border-radius: 50%;
+        font-size: 1rem;
+        font-weight: bold;
+        z-index: 10;
     }
 
     /* Rating Colors */
@@ -350,21 +507,130 @@
         color: red;
     }
 
-    /* SEARCH */
+    #overviewMovie,
+    #trailersMovie,
+    #reviewsMovie {
+        color: var(--change-black);
+        margin: 2rem;
+    }
 
-    #searchResults ul:has(img) {
+    #similarMovies {
         display: flex;
-        justify-content: center;
-        align-items: center;
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    #similarMovies h3 {
+        padding: 0rem 2rem;
+    }
+
+    h3 {
+        color: var(--white);
+        font-size: 1.5rem;
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+        font-weight: 900;
+    }
+
+    .similarPadding {
+        padding: 2rem;
+    }
+
+    /* Trailer movies */
+    #trailersMovie ul {
+        display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        height: 100%;
-        padding: 1em;
+        gap: 1rem;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #trailersMovie {
+        display: none;
+    }
+
+    #trailersMovie:target {
+        display: flex;
+    }
+
+    #reviewsMovie ul {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    #reviewsMovie li {
+        border-radius: 10px;
+        padding: 20px;
+        margin-bottom: 20px;
+        background-color: var(--warm-orange);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    #reviewsMovie li h4 {
+        margin: 0 0 10px 0;
+        font-size: 1.2em;
+        color: var(--change-black);
+    }
+
+    #reviewsMovie li p {
+        margin: 0;
+        color: var(--change-white);
+        line-height: 1.5;
+        font-size: 0.8rem;
+        height: unset;
+    }
+
+    #genresMovie {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+
+    #genresMovie ul {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1rem;
     }
 }
+
 @media screen and (width > 31rem) {
     main {
         margin-top: 8em;
+    }
+
+    #headerMovie img {
+        width: 150px;
+    }
+
+    #overviewMovie,
+    #similarMovies,
+    #trailersMovie,
+    #reviewsMovie {
+        padding-left: 10vw;
+        padding-right: 10vw;
+    }
+
+    #movieTitleGroup h2 {
+        font-size: 2rem;
+    }
+
+    #detailMovies .vote_average {
+        bottom: 3rem;
+        right: 3rem;
+        border-radius: 50%;
+        font-size: 1.25rem;
+        font-weight: bold;
+
+        width: 3em;
+        height: 3em;
+        padding: 1em;
+    }
+
+    .tagline {
+        font-size: 2rem;
+        padding-top: 2rem;
     }
 }
 
@@ -409,5 +675,29 @@
         gap: 2em;
         padding-inline-start: 0;
         margin: 0;
+    }
+
+    #overviewMovie,
+    #similarMovie,
+    #trailersMovie,
+    #reviewsMovie {
+        padding-left: 15vw;
+        padding-right: 15vw;
+    }
+
+    #headerMovie img {
+        width: 200px;
+    }
+
+    #movieTitleGroup {
+        max-width: 100%;
+    }
+
+    #movieTitleGroup h2 {
+        font-size: 2.5rem;
+    }
+
+    .tagline {
+        padding-top: 3.5rem;
     }
 }

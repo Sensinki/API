@@ -1,0 +1,100 @@
+<div id="backdropMovie">
+    <img src="https://image.tmdb.org/t/p/w400<%= movie.backdrop_path %>" alt="<%= movie.title %>">
+    <p class="tagline">
+        <%= movie.tagline %>
+    </p>
+
+    <div id="headerMovie">
+
+        <img src="https://image.tmdb.org/t/p/w400<%= movie.poster_path %>" alt="<%= movie.title %> poster">
+
+        <section id="movieTitleGroup">
+            <h2>
+                <%= movie.title %>
+            </h2>
+
+            <% const releaseDate=new Date(movie.release_date); %>
+                <p>Release Date: <%= releaseDate.getDate().toString().padStart(2, '0' ) %>-<%= (releaseDate.getMonth() +
+                            1).toString().padStart(2, '0' ) %>-<%= releaseDate.getFullYear() %>
+                </p>
+
+                <section id="genresMovie">
+                    <h4>Genres</h4>
+                    <ul>
+                        <% movie.genres.forEach(genre=> { %>
+                            <li>
+                                <p>
+                                    <%= genre.name %>
+                                </p>
+                            </li>
+                            <% }); %>
+                    </ul>
+                </section>
+
+                <a href="#backdropMovie" id="showTrailerButton">Watch Trailer</a>
+        </section>
+    </div>
+
+    <% if (movie.vote_average>= 8) { %>
+        <p class="vote_average green">
+            <%=movie.vote_average %>
+        </p>
+        <% } else if (movie.vote_average>= 5) { %>
+            <p class="vote_average yellow">
+                <%=movie.vote_average %>
+            </p>
+            <% } else { %>
+                <p class="vote_average red">
+                    <%=movie.vote_average %>
+                </p>
+                <% } %>
+
+</div>
+
+<section id="overviewMovie">
+    <h3>Overview</h3>
+    <p>
+        <%= movie.overview %>
+    </p>
+</section>
+
+<section id="trailersMovie">
+    <h3>Official Trailers</h3>
+    <ul>
+        <% if (trailerKeys && trailerKeys.length> 0) { %>
+            <% trailerKeys.forEach(trailerKey=> { %>
+                <li>
+                    <iframe src="https://www.youtube-nocookie.com/embed/<%= trailerKey %>" frameborder="0"></iframe>
+                </li>
+                <% }); %>
+                    <% } else { %>
+                        <p>There are no teasers available for this movie :(</p>
+                        <% } %>
+    </ul>
+</section>
+
+<section id="reviewsMovie">
+    <h3>Reviews</h3>
+    <ul>
+        <% if (reviewsMovie && reviewsMovie.length> 0) { %>
+            <% reviewsMovie.forEach(reviewMovie=> { %>
+                <li>
+                    <h4>
+                        <%= reviewMovie.author %>
+                    </h4>
+                    <% const updatedAt=new Date(reviewMovie.updated_at); %>
+                        <p>Last Updated: <%= updatedAt.getDate().toString().padStart(2, '0' ) %>-<%=
+                                    (updatedAt.getMonth() + 1).toString().padStart(2, '0' ) %>-<%=
+                                        updatedAt.getFullYear() %>
+                        </p>
+
+                        <p>
+                            <%= reviewMovie.content %>
+                        </p>
+                </li>
+                <% }); %>
+                    <% } else { %>
+                        <p>There are no reviews available for this movie :(</p>
+                        <% } %>
+    </ul>
+</section>

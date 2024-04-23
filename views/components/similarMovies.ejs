@@ -1,6 +1,7 @@
 <h3>Similar Movies</h3>
 
 <ul>
+        <% if (similarMovies && similarMovies.length> 0) { %>
     <% similarMovies.forEach(movie=> { %>
         <li>
             <div class="image-container">
@@ -20,19 +21,10 @@
                     <a href="/404">Movie not found</a>
                     <% } %>
 
-                        <% if (movie.vote_average>= 8) { %>
-                            <p class="vote_average green">
-                                <%=movie.vote_average %>
-                            </p>
-                            <% } else if (movie.vote_average>= 5) { %>
-                                <p class="vote_average yellow">
-                                    <%=movie.vote_average %>
-                                </p>
-                                <% } else { %>
-                                    <p class="vote_average red">
-                                        <%=movie.vote_average %>
-                                    </p>
-                                    <% } %>
         </li>
         <% }); %>
+                        <% } else { %>
+                            <p class="similarPadding">There are no similar movies available for this movie :(</p>
+                            <% } %>
+
 </ul>

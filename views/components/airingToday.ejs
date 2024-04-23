@@ -9,9 +9,14 @@
                         <img src="/assets/images/image.png" class="height-change"
                             alt="There is no poster for this movie">
                         <% } %>
-            </div> <a href="/movie/<%= movie.id %>">
+            </div> 
+            <% if (movie.title) { %>
+                <a href="/movie/<%= movie.id %>">
                 <%= movie.title %>
-            </a>
+                    </a>
+                    <% } else { %>
+                        <a href="/404">Movie not found</a>
+                        <% } %>
             <% if (movie.vote_average>= 8) { %>
                 <p class="vote_average green">
                     <%=movie.vote_average %>

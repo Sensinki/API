@@ -9,59 +9,29 @@
 
     <%- include('../partials/header.ejs') %>
 
-        <main>
+        <main id="movieDetail">
             <h1>
                 <%= title %>
             </h1>
 
-            <section>
-                <div id="backdropMovie">
-                    <img src="https://image.tmdb.org/t/p/w400<%= movie.backdrop_path %>" alt="<%= movie.title %>">
 
-                    <div id="headerMovie">
-                        <h2>
-                            <%= movie.title %>
-                        </h2>
-                        <p>
-                            <%= movie.release_date %>
-                        </p>
-                        <img src="https://image.tmdb.org/t/p/w400<%= movie.poster_path %>"
-                            alt="<%= movie.title %> poster">
-                    </div>
+            <section id="detailMovies">
 
-                    <% if (movie.vote_average>= 8) { %>
-                        <p class="vote_average green">
-                            <%=movie.vote_average %>
-                        </p>
-                        <% } else if (movie.vote_average>= 5) { %>
-                            <p class="vote_average yellow">
-                                <%=movie.vote_average %>
-                            </p>
-                            <% } else { %>
-                                <p class="vote_average red">
-                                    <%=movie.vote_average %>
-                                </p>
-                                <% } %>
+                <%- include('../components/detailMovies.ejs') %>
 
-                </div>
+                    <section id="similarMovies">
+                        <%- include('../components/similarMovies.ejs') %>
 
-                <!-- maybe genres or trailer can be here -->
 
-                <h3>Overview</h3>
-                <p>
-                    <%= movie.overview %>
-                </p>
-
-                <section id="similarMovies">
-                    <%- include('../components/similarMovies.ejs') %>
-                </section>
+                    </section>
             </section>
 
-            <script src="/script.js"></script>
         </main>
         <footer>
 
         </footer>
+        <script src="/script.js"></script>
+
 </body>
 
 </html>
