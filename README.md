@@ -42,7 +42,7 @@ You can check my "package.json" file if you want to see all of my dependensies a
 ### 4. .env file 
 As last final step, you should set your .env file for MongoDB connection. In the .env file you will define following informations:
 
-`TMDB_API_KEY=04625eb1806d881fb98867452db70e10`
+`TMDB_API_KEY=YOUR TMBD API KEY`
 `PORT=2222`
 
 ### 5. Run the project
@@ -51,8 +51,8 @@ Now you can run the project. Write your terminal `npm run dev`.
 To check the connection you can go to your browser and write "localhost:2222" or "localhost:3333". If there is no problem, you should see the homepage of the MovyMovie app.
 You can also check the connection by looking at the console. If it is working you should see something like:
 
-`Loaded API Key: YOUR TMBD API KEY
-MovyMovie app listening on port 2222`
+`Loaded API Key: YOUR TMBD API KEY`
+`MovyMovie app listening on port 2222`
 
 ## Process 📫
 ![TMDb API](https://developer.themoviedb.org/reference/intro/getting-started)
