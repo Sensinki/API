@@ -593,6 +593,33 @@
         flex-wrap: wrap;
         gap: 1rem;
     }
+
+    footer {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        width: 100vw;
+        height: 10vh;
+        background-color: #22092cb6;
+        margin-top: 3rem;
+    }
+    footer h2 {
+        position: absolute;
+        bottom: 0.5rem;
+    }
+
+    .errorstatus,
+    .err {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        width: 100vw;
+        height: 100vh;
+        margin: 0;
+        font-size: 5vmin;
+    }
 }
 
 @media screen and (width > 31rem) {
@@ -631,6 +658,10 @@
     .tagline {
         font-size: 2rem;
         padding-top: 2rem;
+    }
+
+    .errorstatus {
+        margin: 0;
     }
 }
 

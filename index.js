@@ -88,6 +88,10 @@ app.use(function (req, res) {
     });
 });
 
+app.get("/*", (req, res) => {
+    res.status(404).render("404", { title: "404" });
+});
+
 // PORT
 app.listen(PORT, () => {
     console.log(`MovyMovie app listening on port ${PORT}`);
